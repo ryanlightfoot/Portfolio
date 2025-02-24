@@ -18,8 +18,9 @@ function App() {
               <section className="about">
                 <h2>About Me</h2>
                 <p>
-                  I'm a passionate developer with expertise in React, TypeScript, and modern web technologies.
-                  I love creating efficient, user-friendly applications that solve real-world problems.
+                I am a dynamic IT professional with a strong passion for acquiring and mastering new skills.
+                As a former professional surfer, I thrive on embracing challenges, whether they are physical or intellectual.
+                In my spare time, I dedicate myself to enhancing my expertise by working on coding projects in many different languages.
                 </p>
               </section>
 
@@ -38,7 +39,9 @@ function App() {
                       <span>TypeScript</span>
                       <span>Node.js</span>
                     </div>
-                    <a href="/project/1">View Details</a>
+                    <div className="additional-details">
+                      <p>Additional details about the Portfolio project...</p>
+                    </div>
                   </div>
                   <div className="project-card">
                     <h3>Babelas</h3>
@@ -50,7 +53,9 @@ function App() {
                     <div className="tech-stack">
                       <span>Flutter</span>
                     </div>
-                    <a href="/project/2">View Details</a>
+                    <div className="additional-details">
+                      <p>Additional details about the Babelas project...</p>
+                    </div>
                   </div>
                 </div>
               </section>

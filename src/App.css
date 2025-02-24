@@ -46,6 +46,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: left;
+  position: relative;
 }
 
 header {
@@ -77,17 +78,26 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  position: relative;
 }
 
 .project-card {
   background: #1a1a1a;
   padding: 1.5rem;
   border-radius: 8px;
-  transition: transform 0.2s;
+  transition: transform 0.2s, filter 0.2s;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  position: relative;
+  z-index: 10;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-grid:hover .project-card:not(:hover) {
+  filter: blur(5px);
+  pointer-events: none;
 }
 
 .tech-stack {
@@ -135,4 +145,16 @@ h2 {
   .project-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.expanded-card {
+  position: relative;
+  z-index: 10;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.blur-others .project-card:not(.expanded-card) {
+  filter: blur(5px);
+  pointer-events: none;
 }
