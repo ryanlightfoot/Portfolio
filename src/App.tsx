@@ -1,11 +1,18 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProjectDetail from './ProjectDetail'; // Import the new component
+import { useState } from 'react';
 
 function App() {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
+  const toggleCard = (cardIndex: number) => {
+    setExpandedCard(expandedCard === cardIndex ? null : cardIndex);
+  };
+
   return (
     <Router>
-      <div className="portfolio-container">
+      <div className={`portfolio-container ${expandedCard !== null ? 'blur-others' : ''}`}>
         <header>
           <h1>Ryan Lightfoot</h1>
           <p className="title">Full Stack Developer</p>
@@ -27,35 +34,45 @@ function App() {
               <section className="projects">
                 <h2>Projects</h2>
                 <div className="project-grid">
-                  <div className="project-card">
-                    <h3>Portfolio</h3>
+                  <div 
+                    className={`project-card ${expandedCard === 1 ? 'expanded' : ''}`} 
+                    onClick={() => toggleCard(1)}
+                  >
+                    <h3>PORTFOLIO</h3>
                     <p>
                       A comprehensive portfolio showcasing my skills and projects as a Full Stack Developer. 
                       This project highlights my expertise in React and TypeScript, featuring a responsive 
                       design and interactive elements to provide a seamless user experience.
                     </p>
                     <div className="tech-stack">
-                      <span>React</span>
-                      <span>TypeScript</span>
-                      <span>Node.js</span>
+                      <span>REACT</span>
+                      <span>TYPESCRIPT</span>
+                      <span>NODE.JS</span>
                     </div>
-                    <div className="additional-details">
-                      <p>Additional details about the Portfolio project...</p>
-                    </div>
+                    {expandedCard === 1 && (
+                      <div className="additional-details">
+                        <p>Additional details about the Portfolio project...</p>
+                      </div>
+                    )}
                   </div>
-                  <div className="project-card">
-                    <h3>Babelas</h3>
+                  <div 
+                    className={`project-card ${expandedCard === 2 ? 'expanded' : ''}`} 
+                    onClick={() => toggleCard(2)}
+                  >
+                    <h3>BABELAS</h3>
                     <p>
                       A Kings Cup inspired drinking game developed for Android devices. 
                       This interactive party game features custom rules, dynamic card animations, 
                       and a modern user interface, making it the perfect companion for social gatherings.
                     </p>
                     <div className="tech-stack">
-                      <span>Flutter</span>
+                      <span>FLUTTER</span>
                     </div>
-                    <div className="additional-details">
-                      <p>Additional details about the Babelas project...</p>
-                    </div>
+                    {expandedCard === 2 && (
+                      <div className="additional-details">
+                        <p>Additional details about the Babelas project...</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </section>
@@ -63,8 +80,8 @@ function App() {
               <section className="contact">
                 <h2>Contact</h2>
                 <div className="contact-links-vertical">
-                  <button onClick={() => window.open('https://github.com/ryanlightfoot', '_blank')}>GitHub</button>
-                  <button onClick={() => window.open('https://www.linkedin.com/in/ryan-lightfoot-profile/', '_blank')}>LinkedIn</button>
+                  <button onClick={() => window.open('https://github.com/ryanlightfoot', '_blank')}>GITHUB</button>
+                  <button onClick={() => window.open('https://www.linkedin.com/in/ryan-lightfoot-profile/', '_blank')}>LINKEDIN</button>
                   <p>Email: ryanlightfoot509@gmail.com</p>
                 </div>
               </section>
