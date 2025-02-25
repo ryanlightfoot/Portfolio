@@ -100,6 +100,16 @@ h2 {
   pointer-events: none;
 }
 
+.project-card.default-focus {
+  filter: none;
+  pointer-events: auto;
+}
+
+.project-grid:hover .project-card.default-focus:not(:hover) {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
 .tech-stack {
   margin-top: 1rem;
   display: flex;
@@ -222,16 +232,69 @@ h2 {
 }
 
 .contact-links-vertical button {
-  background: #ffffff;
-  color: #0a0a0a;
+  margin-left: 0;
+  background: none;
+  color: #f78a2a;
   border: none;
   padding: 0.5rem 1rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
   letter-spacing: 0.1rem;
+  font-size: 0.8rem;
 }
 
 .contact-links-vertical button:hover {
-  background: #f0f0f0;
+  background: none;
+  color: #ffffff;
+}
+
+.contact-links-vertical {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-container {
+  text-align: left;
+  margin-left: 10%;
+}
+
+.profile-img {
+  width: 20vw; /* Further increase viewport width for larger sizing */
+  max-width: 250px; /* Further increase maximum width */
+  height: auto;
+  margin-right: 20%; /* Space on the right */
+  vertical-align: middle; /* Aligns the image with the text */
+}
+
+@media (max-width: 768px) {
+  .profile-img {
+    width: 30vw; /* Further increase for smaller screens */
+    max-width: 180px; /* Further increase smaller maximum width */
+    margin-right: 10px; /* Adjust right margin for smaller screens */
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about p {
+  text-align: justify;
 }
