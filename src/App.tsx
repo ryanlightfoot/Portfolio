@@ -4,7 +4,7 @@ import ProjectDetail from './ProjectDetail'; // Import the new component
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [expandedCard] = useState<number | null>(null);
+  const [isCardHovered, setIsCardHovered] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className={`portfolio-container ${expandedCard !== null ? 'blur-others' : ''}`}>
+        <div className="portfolio-container">
           <header className="header-container fade-in">
             <div className="text-container">
               <h1>Ryan Lightfoot</h1>
@@ -51,7 +51,11 @@ function App() {
                 <section className="projects fade-in">
                   <h2>PROJECTS</h2>
                   <div className="project-grid">
-                    <div className={`project-card ${expandedCard === 1 ? 'expanded' : ''} default-focus`}>
+                    <div
+                      className="project-card"
+                      onMouseEnter={() => setIsCardHovered(true)}
+                      onMouseLeave={() => setIsCardHovered(false)}
+                    >
                       <h3>PORTFOLIO</h3>
                       <p>
                         A comprehensive portfolio showcasing my skills and projects as a Front end Developer. 
@@ -63,16 +67,15 @@ function App() {
                         <span>TYPESCRIPT</span>
                         <span>NODE.JS</span>
                       </div>
-                      {expandedCard === 1 && (
-                        <div className="additional-details">
-                          <p>Additional details about the Portfolio project...</p>
-                        </div>
-                      )}
                       <div className="contact-links-vertical">
-                      <button onClick={() => window.open('https://github.com/ryanlightfoot/Portfolio', '_blank')}>GITHUB</button>
+                        <button onClick={() => window.open('https://github.com/ryanlightfoot/Portfolio', '_blank')}>GITHUB</button>
                       </div>
                     </div>
-                    <div className={`project-card ${expandedCard === 2 ? 'expanded' : ''}`}>
+                    <div
+                      className="project-card"
+                      onMouseEnter={() => setIsCardHovered(true)}
+                      onMouseLeave={() => setIsCardHovered(false)}
+                    >
                       <h3>BABELAS</h3>
                       <p>
                         A Kings Cup inspired drinking game developed for Android devices. 
@@ -82,16 +85,15 @@ function App() {
                       <div className="tech-stack">
                         <span>FLUTTER</span>
                       </div>
-                      {expandedCard === 2 && (
-                        <div className="additional-details">
-                          <p>Additional details about the Babelas project...</p>
-                        </div>
-                      )}
                       <div className="contact-links-vertical">
-                      <button onClick={() => window.open('https://github.com/ryanlightfoot/Babelas', '_blank')}>GITHUB</button>
+                        <button onClick={() => window.open('https://github.com/ryanlightfoot/Babelas', '_blank')}>GITHUB</button>
                       </div>
                     </div>
-                    <div className={`project-card ${expandedCard === 3 ? 'expanded' : ''}`}>
+                    <div
+                      className="project-card"
+                      onMouseEnter={() => setIsCardHovered(true)}
+                      onMouseLeave={() => setIsCardHovered(false)}
+                    >
                       <h3>CAMPWEST</h3>
                       <p>
                         Completed private projects involving Python, PostgreSQL, Solana, and TypeScript. 
@@ -99,7 +101,7 @@ function App() {
                         deliver robust solutions in different domains.
                       </p>
                       <p>
-                        Employed from February 2024
+                        USA BASED - Employed from February 2024
                       </p>
                       <div className="tech-stack">
                         <span>PYTHON</span>
@@ -107,14 +109,6 @@ function App() {
                         <span>SOLANA</span>
                         <span>TYPESCRIPT</span>
                       </div>
-                      {/* {expandedCard === 3 && (
-                        <div className="additional-details">
-                          <p>Additional details about the CampWest project...</p>
-                        </div>
-                      )} */}
-                      {/* <div className="contact-links-vertical">
-                        <button onClick={() => window.open('https://github.com/ryanlightfoot/CampWest', '_blank')}>GITHUB</button>
-                      </div> */}
                     </div>
                   </div>
                 </section>
