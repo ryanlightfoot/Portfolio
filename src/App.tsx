@@ -91,7 +91,12 @@ function App() {
               <h1>Ryan Lightfoot</h1>
               <p className="title" style={{ textAlign: 'left' }}>Full Stack Developer</p>
             </div>
-            <img src="./images/profile.jpg" alt="Profile" className="profile-img" onError={() => console.error("Image failed to load")} />
+            <img 
+              src="/images/profile.jpg" 
+              alt="Profile" 
+              className="profile-img" 
+              onError={() => console.error("Image failed to load")} 
+            />
           </header>
 
           <Routes>
