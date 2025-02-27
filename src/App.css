@@ -75,18 +75,34 @@ h2 {
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
   gap: 2rem;
+  padding: 1rem 2rem;
   position: relative;
+  
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.project-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .project-card {
   background: #1a1a1a;
   padding: 1.5rem;
   border-radius: 0;
-  transition: transform 0.2s, filter 0.2s;
+  transition: transform 0.3s, filter 0.3s, box-shadow 0.3s;
   filter: blur(0);
+  min-width: 300px;
+  max-width: 400px;
+  flex: 0 0 auto;
+  margin: 1rem 0;
 }
 
 .project-card:hover {
@@ -95,25 +111,6 @@ h2 {
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   filter: blur(0);
-}
-
-.project-card:hover ~ .project-card {
-  filter: blur(5px);
-  pointer-events: none;
-}
-
-.project-grid:hover .project-card:not(:hover) {
-  filter: blur(0);
-}
-
-.project-card.default-focus {
-  filter: none;
-  pointer-events: auto;
-}
-
-.project-grid:hover .project-card.default-focus:not(:hover) {
-  filter: blur(5px);
-  pointer-events: none;
 }
 
 .tech-stack {
@@ -214,27 +211,9 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.project-card {
-  background: #1a1a1a;
-  color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 0;
-  transition: transform 0.2s, filter 0.2s;
-}
-
 .project-card h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-}
-
-.tech-stack span {
-  background: #ffffff;
-  color: #0a0a0a;
-  padding: 0.2rem 0.8rem;
-  border-radius: 0.5rem;
-  font-size: 0.8rem;
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: 0.1rem;
 }
 
 .contact-links-vertical button {
@@ -275,18 +254,18 @@ h2 {
 }
 
 .profile-img {
-  width: 20vw; /* Further increase viewport width for larger sizing */
-  max-width: 250px; /* Further increase maximum width */
+  width: 20vw;
+  max-width: 250px;
   height: auto;
-  margin-right: 20%; /* Space on the right */
-  vertical-align: middle; /* Aligns the image with the text */
+  margin-right: 20%;
+  vertical-align: middle;
 }
 
 @media (max-width: 768px) {
   .profile-img {
-    width: 30vw; /* Further increase for smaller screens */
-    max-width: 180px; /* Further increase smaller maximum width */
-    margin-right: 10px; /* Adjust right margin for smaller screens */
+    width: 30vw;
+    max-width: 180px;
+    margin-right: 10px;
   }
 }
 
@@ -303,4 +282,36 @@ h2 {
 
 .about p {
   text-align: justify;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(150, 150, 150, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.scroll-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-left {
+  left: 0px;
+}
+
+.scroll-right {
+  right: 0px;
 }
