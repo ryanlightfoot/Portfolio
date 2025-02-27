@@ -6,7 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ryan Lightfoot - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/Portfolio/assets/index-CJxJR9aw.js"></script>
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script type="module" crossorigin src="/Portfolio/assets/index-Jn_WUBCz.js"></script>
     <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-Cl0Yqi6b.css">
   </head>
   <body>
