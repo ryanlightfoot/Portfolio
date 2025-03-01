@@ -82,6 +82,26 @@ function App() {
     }
   };
 
+  // Add this function to check if the device is mobile
+  const isMobile = () => {
+    return window.innerWidth <= 768;
+  };
+
+  // Add this state
+  const [isMobileView, setIsMobileView] = useState(isMobile());
+
+  // Add this useEffect to detect mobile view
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(isMobile());
+    };
+    
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initialize on mount
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
       <Router>
@@ -94,7 +114,7 @@ function App() {
             <img 
               src="/images/profile.webp" 
               alt="Profile" 
-              className="profile-img" 
+              className="profile-img hide-on-mobile" 
               loading="eager" 
               width="250"
               height="444"
@@ -118,12 +138,14 @@ function App() {
                 <section className="projects fade-in">
                   <h2>PROJECTS</h2>
                   <div style={{ position: 'relative' }}>
-                    <button 
-                      className={`scroll-button scroll-left ${!showLeftArrow ? 'hidden' : ''}`} 
-                      onClick={scrollLeft}
-                    >
-                      ←
-                    </button>
+                    {!isMobileView && (
+                      <button 
+                        className={`scroll-button scroll-left ${!showLeftArrow ? 'hidden' : ''}`} 
+                        onClick={scrollLeft}
+                      >
+                        ←
+                      </button>
+                    )}
                     <div className="project-grid" ref={projectGridRef}>
                       <div
                         className="project-card"
@@ -206,12 +228,14 @@ function App() {
                         </div>
                       </div>
                     </div>
-                    <button 
-                      className={`scroll-button scroll-right ${!showRightArrow ? 'hidden' : ''}`} 
-                      onClick={scrollRight}
-                    >
-                      →
-                    </button>
+                    {!isMobileView && (
+                      <button 
+                        className={`scroll-button scroll-right ${!showRightArrow ? 'hidden' : ''}`} 
+                        onClick={scrollRight}
+                      >
+                        →
+                      </button>
+                    )}
                   </div>
                 </section>
 
