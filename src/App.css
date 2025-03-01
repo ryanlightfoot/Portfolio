@@ -303,6 +303,7 @@ h2 {
   height: auto;
   margin-right: 20%;
   vertical-align: middle;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -569,5 +570,266 @@ h2 {
   .about p {
     text-align: center;
     padding: 0 0.5rem;
+  }
+}
+
+/* Custom color variables for consistent theming */
+:root {
+  --primary-color: #646cff;
+  --primary-hover: #7c82ff;
+  --accent-color: #f78a2a;
+  --accent-hover: #ffb06b;
+  --dark-bg: #070707;
+  --card-bg: #1a1a1a;
+  --text-color: #ffffff;
+  --scroll-track: rgba(100, 108, 255, 0.1);
+  --scroll-thumb: rgba(100, 108, 255, 0.5);
+  --scroll-thumb-hover: rgba(100, 108, 255, 0.8);
+}
+
+/* Custom scrollbar for the entire page */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+/* Improved animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Enhanced header styling */
+.header-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-container::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  z-index: 1;
+}
+
+.text-container h1 {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 5s ease infinite;
+}
+
+/* Enhanced section styling */
+section h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+section h2:hover::after {
+  width: 100%;
+}
+
+/* Mobile-specific section heading styling */
+@media (max-width: 768px) {
+  section h2::after {
+    left: 0;
+    transform: none;
+    width: 50px;
+  }
+  
+  /* For mobile, animate on scroll instead of hover */
+  section h2:hover::after {
+    width: 50px; /* Reset hover effect on mobile */
+  }
+  
+  /* Use the fade-in visible class to trigger the animation on scroll */
+  section.fade-in.visible h2::after {
+    width: 100%;
+  }
+}
+
+/* Enhanced project cards */
+.project-card {
+  border: 1px solid rgba(100, 108, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card h3 {
+  transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+  color: var(--accent-color);
+}
+
+/* Enhanced tech stack tags */
+.tech-stack span {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.tech-stack span:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Enhanced buttons */
+.contact-links-vertical button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.contact-links-vertical button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-links-vertical button:hover {
+  border: 1px solid var(--accent-color);
+  letter-spacing: 0.15rem;
+}
+
+.contact-links-vertical button:hover::before {
+  left: 100%;
+}
+
+/* Improved fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation for project cards */
+.project-grid .project-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.project-grid .project-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.project-grid .project-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.project-grid .project-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* Page loading animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.portfolio-container {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .text-container h1 {
+    font-size: 2.2rem;
+  }
+  
+  section h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .contact-links-vertical button {
+    margin: 0.5rem auto;
+    width: 80%;
+    max-width: 250px;
+    display: block;
+  }
+  
+  .scroll-button {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+    background: rgba(150, 150, 150, 0.9);
+  }
+  
+  .scroll-left {
+    left: -5px;
+  }
+  
+  .scroll-right {
+    right: -5px;
   }
 }
