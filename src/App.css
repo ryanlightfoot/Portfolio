@@ -264,6 +264,10 @@ h2 {
   font-size: 0.8rem;
 }
 
+.contact-links-vertical button:hover {
+  color: #ffb06b;
+}
+
 @media (max-width: 768px) {
   .contact-links-vertical {
     display: flex;
@@ -351,7 +355,11 @@ h2 {
   cursor: pointer;
   z-index: 20;
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, background 0.3s ease;
+}
+
+.scroll-button:hover {
+  background: rgba(180, 180, 180, 0.9);
 }
 
 .scroll-button.hidden {

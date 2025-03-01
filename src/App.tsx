@@ -92,12 +92,12 @@ function App() {
               <p className="title" style={{ textAlign: 'left' }}>Full Stack Developer</p>
             </div>
             <img 
-              src="/images/profile.jpg" 
-              srcSet="/images/profile-small.jpg 400w, /images/profile.jpg 800w"
-              sizes="(max-width: 600px) 400px, 800px"
+              src="/images/profile.webp" 
               alt="Profile" 
               className="profile-img" 
               loading="eager" 
+              width="250"
+              height="444"
               onError={() => console.error("Image failed to load")} 
             />
           </header>
@@ -221,7 +221,7 @@ function App() {
                     <button onClick={() => window.open('https://github.com/ryanlightfoot', '_blank')}>GITHUB</button><br />
                     <button onClick={() => window.open('https://www.linkedin.com/in/ryan-lightfoot-profile/', '_blank')}>LINKEDIN</button><br />
                     <button onClick={() => window.location.href = 'mailto:ryanlightfoot509@gmail.com'}>EMAIL</button><br />
-                    <button onClick={() => window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>GRINDER</button>
+                    {/* <button onClick={() => window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>GRINDER</button> */}
                   </div>
                 </section>
               </>
