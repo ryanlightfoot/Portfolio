@@ -216,7 +216,7 @@ function App() {
                           A React-based web application designed for surf enthusiasts to check wave forecasts, 
                           weather conditions, and equipment recommendations. Features include 5-day forecasts with 
                           hourly data for popular surf spots, user accounts to save favorite locations, and 
-                          equipment tracking for wetsuits and surfboards.
+                          equipment tracking for wetsuits and surfboards. Created for my final project at Nelson Mandela University.
                         </p>
                         <div className="tech-stack">
                           <span>REACT</span>
