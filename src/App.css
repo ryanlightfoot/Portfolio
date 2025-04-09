@@ -55,12 +55,12 @@ header {
 }
 
 header h1 {
-  font-size: 3.5rem;
+  font-size: calc(1.2vw * 1.618 * 1.618 * 1.618);
   margin-bottom: 0.5rem;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: calc(1.2vw * 1.618 * 1.618);
   color: #646cff;
 }
 
@@ -69,7 +69,7 @@ section {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: calc(1.2vw * 1.618 * 1.618);
   margin-bottom: 1.5rem;
   color: #646cff;
 }
@@ -161,12 +161,12 @@ h2 {
   }
   
   h2 {
-    font-size: 1.8rem;
+    font-size: calc(2vw * 1.618 * 1.618);
     margin-bottom: 1rem;
   }
   
   header h1 {
-    font-size: 2.5rem;
+    font-size: calc(2vw * 1.618 * 1.618 * 1.618);
   }
   
   .project-grid {
@@ -184,7 +184,7 @@ h2 {
   }
   
   .project-card h3 {
-    font-size: 1.3rem;
+    font-size: calc(2vw * 1.618);
   }
   
   .project-card p {
@@ -209,6 +209,7 @@ body {
   color: #ffffff;
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
+  font-size: 1.2vw;
 }
 
 header {
@@ -217,13 +218,13 @@ header {
 }
 
 header h1 {
-  font-size: 4rem;
+  font-size: calc(1.2vw * 1.618 * 1.618 * 1.618);
   font-weight: bold;
   margin: 0;
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: calc(1.2vw * 1.618 * 1.618);
   color: #f0f0f0;
 }
 
@@ -233,13 +234,13 @@ header h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: calc(1.2vw * 1.618 * 1.618);
   color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .project-card h3 {
-  font-size: 1.5rem;
+  font-size: calc(1.2vw * 1.618);
   margin-bottom: 0.5rem;
 }
 
@@ -407,19 +408,19 @@ h2 {
 
 @media (max-width: 768px) {
   body {
-    font-size: 14px;
+    font-size: 2vw;
   }
   
   header h1 {
-    font-size: 2.2rem;
+    font-size: calc(2vw * 1.618 * 1.618 * 1.618);
   }
   
   .title {
-    font-size: 1.1rem;
+    font-size: calc(2vw * 1.618 * 1.618);
   }
   
   .about p {
-    font-size: 0.95rem;
+    font-size: 2vw;
   }
 }
 
@@ -462,7 +463,7 @@ h2 {
   }
   
   header h1 {
-    font-size: 2rem;
+    font-size: calc(2vw * 1.618 * 1.618 * 1.618);
     margin-bottom: 0.25rem;
     text-align: center;
   }
@@ -476,7 +477,7 @@ h2 {
   }
   
   h2 {
-    font-size: 1.5rem;
+    font-size: calc(2vw * 1.618 * 1.618);
     margin-bottom: 0.75rem;
     text-align: center;
   }
@@ -509,7 +510,7 @@ h2 {
   }
   
   .project-card h3 {
-    font-size: 1.2rem;
+    font-size: calc(2vw * 1.618);
     margin-bottom: 0.5rem;
     text-align: center;
   }
@@ -803,7 +804,7 @@ section h2:hover::after {
 /* Responsive improvements */
 @media (max-width: 768px) {
   .text-container h1 {
-    font-size: 2.2rem;
+    font-size: calc(2vw * 1.618 * 1.618 * 1.618);
   }
   
   section h2::after {

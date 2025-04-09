@@ -152,7 +152,7 @@ function App() {
                         onMouseEnter={() => setIsCardHovered(true)}
                         onMouseLeave={() => setIsCardHovered(false)}
                       >
-                        <h3>CAMPWEST</h3>
+                        <h3>CAMPWEST (Current employment)</h3>
                         <p>
                           Completed private projects involving Python, PostgreSQL, Solana, and TypeScript. 
                           These projects demonstrate my ability to work with a variety of technologies and 
@@ -166,6 +166,25 @@ function App() {
                           <span>POSTGRESQL</span>
                           <span>SOLANA</span>
                           <span>TYPESCRIPT</span>
+                        </div>
+                      </div>
+                      <div
+                        className="project-card"
+                        onMouseEnter={() => setIsCardHovered(true)}
+                        onMouseLeave={() => setIsCardHovered(false)}
+                      >
+                        <h3>BEAT THE BEAT</h3>
+                        <p>
+                          My First Game Jam Game! Took part in the B1T Game Jam and created a rhythmic game experience. Players must dodge lasers and collect beat boxes to keep the darkness at bay, surviving for as long as possible. The game features rhythm-based mechanics where threats move on the beat.
+                        </p>
+                        <div className="tech-stack">
+                          <span>UNITY</span>
+                          <span>C#</span>
+                          <span>SOUND DESIGN</span>
+                          <span>PIXEL ART</span>
+                        </div>
+                        <div className="contact-links-vertical">
+                          <button onClick={() => window.open('https://ryanlightfoot.itch.io/beat-the-beat', '_blank')}>ITCH.IO</button>
                         </div>
                       </div>
                       <div
