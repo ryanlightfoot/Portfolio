@@ -215,11 +215,11 @@ function App() {
                         onMouseEnter={() => setIsCardHovered(true)}
                         onMouseLeave={() => setIsCardHovered(false)}
                       >
-                        <h3>ARCHITECTURE PORTFOLIO</h3>
+                        <h3>PHOTOGRAPHY PORTFOLIO</h3>
                         <p>
-                          A clean and modern React-based portfolio website showcasing architectural photography and design work. 
+                          A clean and modern React-based portfolio website showcasing photography and design work. 
                           Features a responsive layout with elegant image galleries and smooth navigation to highlight 
-                          architectural projects and visual storytelling.
+                          photography and visual storytelling.
                         </p>
                         <div className="tech-stack">
                           <span>REACT</span>
