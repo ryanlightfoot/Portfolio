@@ -215,6 +215,24 @@ function App() {
                         onMouseEnter={() => setIsCardHovered(true)}
                         onMouseLeave={() => setIsCardHovered(false)}
                       >
+                        <h3>ARCHITECTURE PORTFOLIO</h3>
+                        <p>
+                          A clean and modern React-based portfolio website showcasing architectural photography and design work. 
+                          Features a responsive layout with elegant image galleries and smooth navigation to highlight 
+                          architectural projects and visual storytelling.
+                        </p>
+                        <div className="tech-stack">
+                          <span>REACT</span>
+                        </div>
+                        <div className="contact-links-vertical">
+                          <button onClick={() => window.open('https://shaye-photography-port.vercel.app', '_blank')}>VIEW SITE</button>
+                        </div>
+                      </div>
+                      <div
+                        className="project-card"
+                        onMouseEnter={() => setIsCardHovered(true)}
+                        onMouseLeave={() => setIsCardHovered(false)}
+                      >
                         <h3>PORTFOLIO</h3>
                         <p>
                           A comprehensive portfolio showcasing my skills and projects as a Front end Developer. 
