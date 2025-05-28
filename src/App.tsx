@@ -132,6 +132,7 @@ function App() {
                   I am a dynamic IT professional with a strong passion for acquiring and mastering new skills.
                   As a former professional surfer, I thrive on embracing challenges, whether they are physical or intellectual.
                   In my spare time, I dedicate myself to enhancing my expertise by working on coding projects in many different languages.
+                  Currently I develop as a freelancer under my business LightDevelopments.
                   </p>
                 </section>
 
@@ -152,14 +153,36 @@ function App() {
                         onMouseEnter={() => setIsCardHovered(true)}
                         onMouseLeave={() => setIsCardHovered(false)}
                       >
-                        <h3>CAMPWEST (Current employment)</h3>
+                        <h3>KYARO (Active contract)</h3>
+                        <p>
+                          Complete Full stack role completing automation within the shopify space and connecting the dots between ecommerce stores by data accumulation.
+                        </p>
+                        <p>
+                          Dutch based - Contract start from March 2025
+                        </p>
+                        <div className="tech-stack">
+                          <span>PYTHON</span>
+                          <span>MAKE.COM</span>
+                          <span>VM DEVELOPMENT</span>
+                          <span>AUTOMATION</span>
+                        </div>
+                        <div className="contact-links-vertical">
+                          <button onClick={() => window.open('https://kyaro.fr/en', '_blank')}>KYARO STORE</button>
+                        </div>
+                      </div>
+                      <div
+                        className="project-card"
+                        onMouseEnter={() => setIsCardHovered(true)}
+                        onMouseLeave={() => setIsCardHovered(false)}
+                      >
+                        <h3>CAMPWEST (Active contract)</h3>
                         <p>
                           Completed private projects involving Python, PostgreSQL, Solana, and TypeScript. 
                           These projects demonstrate my ability to work with a variety of technologies and 
                           deliver robust solutions in different domains.
                         </p>
                         <p>
-                          USA BASED - Employed from February 2024
+                          USA Based - Contract start from February 2024
                         </p>
                         <div className="tech-stack">
                           <span>PYTHON</span>
@@ -214,7 +237,7 @@ function App() {
                       >
                         <h3>BABELAS</h3>
                         <p>
-                          A Kings Cup inspired drinking game developed for Android devices. 
+                          A Kings Cup inspired game developed for Android devices. 
                           This interactive party game features custom rules, dynamic card animations, 
                           and a modern user interface, making it the perfect companion for social gatherings.
                         </p>
